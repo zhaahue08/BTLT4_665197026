@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Komorebi Sweets & Cafe - Tiệm bánh ngọt và cà phê phong cách Anime Kawaii hoa anh đào Nhật Bản dành cho các Otaku và Wibu chân chính.">
+    <title>Komorebi Anime Sweets & Cafe | Sakura Menu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+         :root {
+            --primary: #ff6584;
+            --primary-hover: #ff4770;
+            --accent: #ff8fa3;
+            --soft-pink: #fff0f3;
+            --sakura-glow: rgba(255, 101, 132, 0.35);
+            --card-glass: rgba(255, 255, 255, 0.88);
+            --text-dark: #3a222c;
+            --text-muted: #785a66;
+            --gold: #ffbe0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        /* ẢNH NỀN ANIME TOÀN TRANG: CỐ ĐỊNH, KHÔNG BỊ CO GIÃN VỠ HÌNH */
+        
+        body {
+            font-family: 'Quicksand', 'M PLUS Rounded 1c', sans-serif;
+            background-color: #2b1720;
+            background-image: linear-gradient(rgba(255, 240, 245, 0.65), rgba(255, 235, 240, 0.72)), url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1920&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        
+        .main-header {
+            width: 100%;
+            min-height: 380px;
+            background-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1600&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #page-header .header-overlay {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 17, 34, 0.82) 0%, rgba(186, 24, 75, 0.68) 100%);
+            backdrop-filter: blur(3px);
+            padding: 65px 20px 55px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .brand-logo {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 25px rgba(255, 175, 204, 0.8), 0 8px 18px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .brand-logo:hover {
+            transform: scale(1.1) rotate(6deg);
+        }
+        
+        .brand-name {
+            font-family: 'Comfortaa', cursive;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        
+        .brand-name::before {
+            content: "🌸 ";
+        }
+        
+        .brand-slogan {
+            font-size: 1.05rem;
+            color: #ffe5ec;
+            margin-top: 10px;
+            font-weight: 600;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        
+        .main-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid rgba(255, 229, 236, 0.9);
+        }
+        
+        .nav-list li {
+            display: inline-block;
+        }
+        
+        .main-nav>.nav-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            list-style: none;
+            padding: 12px 15px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #5c3848;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 9px 22px;
+            border-radius: 25px;
+            border: 1px solid transparent;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            background-color: var(--soft-pink);
+            border-color: #ffccd5;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255, 117, 140, 0.45);
+        }
+        
+        .page-container {
+            max-width: 1240px;
+            margin: 45px auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 36px;
+            align-items: flex-start;
+        }
+        
+        .menu-content {
+            flex: 1;
+        }
+        
+        .menu-aside {
+            width: 330px;
+            position: sticky;
+            top: 85px;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 10px 26px;
+            margin-bottom: 28px;
+            border: 2px dashed #ff8fa3;
+            border-radius: 18px;
+            background-image: linear-gradient(135deg, rgba(255, 240, 243, 0.95) 0%, rgba(255, 227, 232, 0.95) 100%);
+            background-origin: content-box;
+            background-clip: padding-box;
+            box-shadow: 0 6px 18px rgba(255, 175, 204, 0.3);
+            backdrop-filter: blur(6px);
+        }
+        
+        .section-title {
+            color: #d90429;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 26px;
+            margin-bottom: 50px;
+        }
+        /* CARD BÁNH GLASSMORPHISM TRONG SUỐT NỔI BẬT NỀN ANIME */
+        
+        .food-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: 0 10px 26px rgba(186, 24, 75, 0.12);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 18px 36px var(--sakura-glow);
+            border-color: #ff9bb2;
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .food-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .food-card:hover::before {
+            opacity: 1;
+        }
+        /* KHUNG CHỨA ẢNH KHÓA TỶ LỆ CHUẨN: KHÔNG BAO GIỜ BỊ MÉO/DẸP HÌNH */
+        
+        .card-thumb-wrap {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            background-color: #ffe5ec;
+        }
+        
+        .card-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 18px;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .food-card:hover .card-thumb {
+            transform: scale(1.08);
+        }
+        
+        .card-title {
+            font-size: 1.15rem;
+            color: #441e2a;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        
+        .card-title+p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px dashed #ffd1dc;
+            padding-top: 12px;
+        }
+        
+        .food-price {
+            font-weight: 800;
+            font-size: 1.18rem;
+            color: #ff2a5f;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-order {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: #ffffff;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-order:hover {
+            background: linear-gradient(135deg, #ff4d6d 0%, #ff758c 100%);
+            box-shadow: 0 8px 22px rgba(255, 77, 109, 0.55);
+            transform: translateY(-2px) scale(1.05);
+        }
+        
+        .btn-order:active {
+            transform: translateY(0);
+        }
+        
+        .ritual-card {
+            border: 2px dashed #ff70a6;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 240, 245, 0.92) 100%);
+        }
+        
+        .ritual-card::after {
+            content: "🪄";
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            font-size: 1.4rem;
+            filter: drop-shadow(0 2px 4px rgba(255, 105, 180, 0.6));
+            animation: floatWand 2.2s infinite ease-in-out alternate;
+        }
+        
+        .ritual-card .btn-order {
+            background: linear-gradient(135deg, #e60067 0%, #ff4d94 100%);
+            box-shadow: 0 5px 15px rgba(230, 0, 103, 0.35);
+        }
+        
+        .ritual-card .btn-order:hover {
+            background: linear-gradient(135deg, #c90059 0%, #e60067 100%);
+            box-shadow: 0 8px 20px rgba(230, 0, 103, 0.5);
+        }
+        
+        .aside-box {
+            background: var(--card-glass);
+            backdrop-filter: blur(12px);
+            border-radius: 22px;
+            padding: 24px;
+            box-shadow: 0 10px 28px rgba(186, 24, 75, 0.12);
+            margin-bottom: 28px;
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+        }
+        
+        .aside-title {
+            font-size: 1.2rem;
+            color: #c9184a;
+            margin-bottom: 18px;
+            border-bottom: 2px dashed #ffd1dc;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .trending-list {
+            list-style: none;
+        }
+        
+        .trending-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #ffe5ec;
+            transition: transform 0.2s;
+        }
+        
+        .trending-item:hover {
+            transform: translateX(4px);
+        }
+        
+        .trending-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .rank {
+            width: 32px;
+            height: 32px;
+            background: #ffe5ec;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.88rem;
+            color: #a4133c;
+            flex-shrink: 0;
+        }
+        
+        .trending-list .trending-item:first-child .rank {
+            background: linear-gradient(135deg, #ff4d6d 0%, #ff758c 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4);
+        }
+        
+        .trending-item strong {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+        
+        .trending-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        .promo-card {
+            border: 14px solid transparent;
+            border-image-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect x='4' y='4' width='52' height='52' rx='8' fill='%23fff0f3' stroke='%23ff7597' stroke-width='4' stroke-dasharray='8 6'/%3E%3Ccircle cx='10' cy='10' r='4' fill='%23ff4d79'/%3E%3Ccircle cx='50' cy='10' r='4' fill='%23ff4d79'/%3E%3Ccircle cx='10' cy='50' r='4' fill='%23ff4d79'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%23ff4d79'/%3E%3C/svg%3E");
+            border-image-slice: 20;
+            border-image-repeat: round;
+            background: rgba(255, 245, 248, 0.95);
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.25);
+        }
+        
+        .promo-heading {
+            color: #c9184a;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        
+        .promo-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #59404c;
+        }
+        
+        .promo-code {
+            display: inline-block;
+            margin-top: 14px;
+            background: #ffffff;
+            padding: 7px 18px;
+            border-radius: 12px;
+            border: 2px dashed #ff4d6d;
+            font-weight: 800;
+            color: #ff4d6d;
+            font-size: 0.98rem;
+            box-shadow: 0 4px 10px rgba(255, 77, 109, 0.15);
+            letter-spacing: 0.5px;
+        }
+        
+        .main-footer {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 15 C28 20 20 28 15 30 C20 32 28 40 30 45 C32 40 40 32 45 30 C40 28 32 20 30 15 Z' fill='%23ffb3c1' fill-opacity='0.15'/%3E%3C/svg%3E"), linear-gradient(180deg, #381522 0%, #1a0810 100%);
+            background-repeat: repeat, no-repeat;
+            background-position: top left, center;
+            background-size: 60px 60px, cover;
+            color: #ffd6df;
+            padding: 65px 20px 30px;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .main-footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ff758c, #ff7eb3, #ffccd5, #ff758c);
+            background-size: 200% 100%;
+            animation: rainbowBar 4s linear infinite;
+        }
+        
+        .footer-columns {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            border-left: 4px solid #ff758c;
+            padding-left: 10px;
+        }
+        
+        .footer-col p {
+            font-size: 0.92rem;
+            margin-bottom: 8px;
+            color: #ffe5ec;
+        }
+        
+        .maid-note {
+            font-size: 0.84rem;
+            color: #ff9bb2;
+            margin-top: 6px;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        
+        .social-btn {
+            text-decoration: none;
+            color: #381522;
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffccd5 100%);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .social-btn:hover {
+            background: #ffffff;
+            color: #ff4770;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 143, 163, 0.45);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 204, 213, 0.2);
+            padding-top: 24px;
+            font-size: 0.88rem;
+            color: #ffb3c1;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes floatWand {
+            0% {
+                transform: rotate(0deg) translateY(0);
+            }
+            100% {
+                transform: rotate(15deg) translateY(-6px);
+            }
+        }
+        
+        @keyframes rainbowBar {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+        
+        @media (max-width: 920px) {
+            .page-container {
+                flex-direction: column;
+            }
+            .menu-aside {
+                width: 100%;
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header" id="page-header">
+        <div class="header-overlay">
+            <div class="header-content">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&auto=format&fit=crop&q=80" alt="Komorebi Cafe Logo" class="brand-logo">
+                <h1 class="brand-name">Komorebi Sweets & Cafe</h1>
+                <p class="brand-slogan">✨ Chốn hẹn hò Kawaii - Nơi vị ngọt Anime chạm đến trái tim bạn ✨</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#home" class="nav-link active">Trang chủ</a></li>
+            <li class="nav-item"><a href="#cakes" class="nav-link">Bánh Ngọt Anime</a></li>
+            <li class="nav-item"><a href="#drinks" class="nav-link">Cà Phê Waifu</a></li>
+            <li class="nav-item"><a href="#rituals" class="nav-link">Nghi Thức Phù Phép</a></li>
+            <li class="nav-item"><a href="#promo" class="nav-link">Khuyến Mãi Otaku</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Liên Hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-container" id="home">
+
+        <main class="menu-content">
+
+            <!-- SECTION 1: BÁNH NGỌT ANIME -->
+            <section class="menu-section" id="cakes">
+                <div class="section-badge">
+                    <h2 class="section-title">🌸 Bánh Ngọt Anime Thủ Công</h2>
+                </div>
+
+                <div class="items-grid">
+                    <article class="food-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&auto=format&fit=crop&q=80" alt="Bánh Shortcake Dâu Tây Anime" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Shortcake Dâu Tây Hạnh Phúc</h3>
+                        <p class="card-desc">Bánh kem dâu tây bông lan xốp mềm như mây, phủ ngập kem tươi Hokkaido béo mịn ngọt ngào.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">48.000đ</span>
+                            <button type="button" class="btn-order">Đặt món ✨</button>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&auto=format&fit=crop&q=80" alt="Cupcake Hoa Anh Đào Tai Thỏ" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Cupcake Tai Thỏ Sakura</h3>
+                        <p class="card-desc">Cupcake vani thơm lừng phủ lớp kem bơ màu cánh hoa anh đào kèm đôi tai thỏ bẻ nghiêng đáng yêu.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">39.000đ</span>
+                            <button type="button" class="btn-order">Đặt món ✨</button>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80" alt="Bánh Croissant Bơ Phủ Đường Hồng" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Croissant Giòn Tan Harajuku</h3>
+                        <p class="card-desc">Sừng trâu nướng vàng ruộm nhiều lớp, rưới kem dâu hồng pastel thơm mùi bơ Pháp thơm nức mũi.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">45.000đ</span>
+                            <button type="button" class="btn-order">Đặt món ✨</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- SECTION 2: CÀ PHÊ & THỨC UỐNG -->
+            <section class="menu-section" id="drinks">
+                <div class="section-badge">
+                    <h2 class="section-title">☕ Cà Phê & Thức Uống Waifu</h2>
+                </div>
+
+                <div class="items-grid">
+                    <article class="food-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=600&auto=format&fit=crop&q=80" alt="Latte Art Anime Dễ Thương" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Latte Art Anime 3D</h3>
+                        <p class="card-desc">Cà phê sữa béo ngậy được tạo hình bọt sữa 3D hình bé cún chibi dễ thương ngất ngây.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">50.000đ</span>
+                            <button type="button" class="btn-order">Đặt món ✨</button>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&auto=format&fit=crop&q=80" alt="Matcha Uji Kem Tuyết" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Matcha Uji Ice Float</h3>
+                        <p class="card-desc">Matcha Kyoto nguyên chất thanh mát phủ thêm một viên kem vani tuyết mềm mịn ngọt ngào.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">49.000đ</span>
+                            <button type="button" class="btn-order">Đặt món ✨</button>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?w=600&auto=format&fit=crop&q=80" alt="Soda Hoa Anh Đào Lấp Lánh" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Soda Sparkling Sakura</h3>
+                        <p class="card-desc">Siro hoa anh đào ngâm muối thanh mát, hòa cùng soda sủi bọt và thạch hồng lấp lánh như pha lê.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">42.000đ</span>
+                            <button type="button" class="btn-order">Đặt món ✨</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- SECTION 3: NGHI THỨC PHÙ PHÉP & NHẢY MAID -->
+            <section class="menu-section" id="rituals">
+                <div class="section-badge">
+                    <h2 class="section-title">✨ Dịch Vụ Phù Phép & Nghi Thức Waifu</h2>
+                </div>
+
+                <div class="items-grid">
+                    <article class="food-card ritual-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format&fit=crop&q=80" alt="Bùa Chú Moe Moe Kyun" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Phù Phép "Moe Moe Kyun"</h3>
+                        <p class="card-desc">Maid sẽ vẽ hình trái tim bằng tương sốt, làm động tác phù phép và đọc thần chú độc quyền giúp bánh ngọt ngon hơn 200%!</p>
+                        <div class="card-bottom">
+                            <span class="food-price">Miễn phí</span>
+                            <button type="button" class="btn-order">Niệm Chú ✨</button>
+                        </div>
+                    </article>
+
+                    <article class="food-card ritual-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&auto=format&fit=crop&q=80" alt="Vũ Điệu Idol Oishii" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Điệu Nhảy "Oishiku Nare"</h3>
+                        <p class="card-desc">Vũ đạo idol mini 60 giây tiếp thêm năng lượng tích cực và chúc phúc cho bàn tiệc của các Senpai tràn ngập niềm vui.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">25.000đ</span>
+                            <button type="button" class="btn-order">Yêu cầu 🎀</button>
+                        </div>
+                    </article>
+
+                    <article class="food-card ritual-card">
+                        <div class="card-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&auto=format&fit=crop&q=80" alt="Chụp Ảnh Cheki Kỷ Niệm" class="card-thumb">
+                        </div>
+                        <h3 class="card-title">Chụp Ảnh Cheki & Ban Phép</h3>
+                        <p class="card-desc">Chụp ảnh polaroid lấy liền cùng Maid, được ký tên, vẽ sticker ma thuật và niệm chú may mắn mang về.</p>
+                        <div class="card-bottom">
+                            <span class="food-price">45.000đ</span>
+                            <button type="button" class="btn-order">Chụp Ngay 📸</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ASIDE: MÓN HOT & KHUNG KHUYẾN MÃI -->
+        <aside class="menu-aside" id="promo">
+            <div class="aside-box trending-box">
+                <h3 class="aside-title">🌟 Món Hot Trong Tuần</h3>
+                <ul class="trending-list">
+                    <li class="trending-item">
+                        <span class="rank">#1</span>
+                        <div class="info">
+                            <strong>Shortcake Dâu Tây</strong>
+                            <p>500+ Senpai gọi mỗi tuần</p>
+                        </div>
+                    </li>
+                    <li class="trending-item">
+                        <span class="rank">#2</span>
+                        <div class="info">
+                            <strong>Latte Art Anime 3D</strong>
+                            <p>Check-in sống ảo triệu tim</p>
+                        </div>
+                    </li>
+                    <li class="trending-item">
+                        <span class="rank">#3</span>
+                        <div class="info">
+                            <strong>Matcha Uji Ice Float</strong>
+                            <p>Đậm vị thanh tao chuẩn Nhật</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="aside-box promo-card">
+                <h3 class="promo-heading">🎁 OTAKU COSPLAY DAY</h3>
+                <p class="promo-text">Mặc áo anime hoặc đi cùng Waifu/Husband: <strong>Giảm 20%</strong> trên hoá đơn bánh & nước!</p>
+                <span class="promo-code">CODE: SAKURA-WIBU</span>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer class="main-footer" id="contact">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h4>⏰ Giờ Mở Cửa</h4>
+                <p>Thứ 2 - Thứ 6: 08:30 - 22:30</p>
+                <p>Thứ 7 - Chủ Nhật: 08:00 - 23:00</p>
+                <p class="maid-note"><em>(Vẽ Latte Art theo yêu cầu từ 09:00 hàng ngày)</em></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>📍 Thông Tin Quán</h4>
+                <p>Địa chỉ: 79 Đường Hoa Anh Đào, Quận Bình Thạnh, TP. HCM</p>
+                <p>Hotline: 0988.999.WIBU (0988 999 888)</p>
+                <p>Email: maid@komorebicafe.vn</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>🎀 Kết Nối Cùng Maid Cafe</h4>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
+                    <a href="https://tiktok.com" target="_blank" class="social-btn">TikTok</a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn">Instagram</a>
+                    <a href="https://discord.com" target="_blank" class="social-btn">Discord Hub</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Komorebi Sweets & Cafe. All rights reserved. Thiết kế dành riêng cho Anime Lovers 🌸✨</p>
+        </div>
+    </footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+
+</html>
